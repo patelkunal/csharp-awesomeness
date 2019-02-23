@@ -6,7 +6,11 @@ namespace MainApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var dataframe = new Dataframe.Simple.WeatherDataframe();
+            Dataframe.Simple.WeatherDataframePopulator.Populate(dataframe, 3);
+            Console.WriteLine(dataframe);
+
+            dataframe.DoWeatherStatistics();
         }
     }
 }
